@@ -1,0 +1,37 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insertAtBegin(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
+
+    def printList(self):
+        current_node = self.head
+        while current_node is not None:
+            print(current_node.data, end=" -- ")
+            current_node = current_node.next
+        print("...")
+
+# Test the code
+theClass = ["Chris", "Leo", "Mason","Jaiden","Nate","Shahood","Marcos","Ryan","Muntag","Aidan",""]
+linked_list = LinkedList()
+
+# Adding initial names to the linked list at the beginning
+for name in theClass:
+    linked_list.insertAtBegin(name)
+
+# Print the current list
+print("Current list:")
+linked_list.printList()
+
+
